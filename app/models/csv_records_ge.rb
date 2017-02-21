@@ -1,8 +1,24 @@
 class CsvRecordsGe < ActiveRecord::Base
-  geocoded_by :event_address
-  after_validation :geocode          # auto-fetch coordinates
-  reverse_geocoded_by :event_latitude, :event_longitude
-  after_validation :reverse_geocode  # auto-fetch address
+  searchkick locations: [:location]
+  before_save :calculate_coordinates
 
-  searchkick
+  def calculate_coordinates
+    country = ISO3166::Country.find_country_by_name(country_name_from_address)
+    if country.present?
+      self.event_latitude = country.latitude_dec
+      self.event_longitude = country.longitude_dec
+    end
+  end
+
+  def country_name_from_address
+    # Based on this Address format
+    # AV. SANTO TORIBIO NO 115 INT. 701,27,SAN ISIDRO,PERU
+    # Extracts the last piece (PERU)
+    country_name = event_address.split(',').last.capitalize
+    country_name
+  end
+
+  def search_data
+    attributes.merge location: { lat: event_latitude, lon: event_longitude }
+  end
 end
