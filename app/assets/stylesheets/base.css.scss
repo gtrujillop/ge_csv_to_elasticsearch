@@ -1,0 +1,375 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+section {
+  overflow: unset;
+}
+
+.menubar{
+  width: 20px;
+  height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 48px;
+  h2 {
+    font-size: 1.4em;
+    text-align: justify;
+    margin-bottom: 40px;
+    margin-top: 0px;
+  }
+}
+
+body {
+    background-image: url("bg_w.jpg");
+    background-repeat: repeat-x;
+    background-color:white;
+    overflow-x: hidden;
+    background-position: center bottom;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.responsive-width {
+    font-size: 1.2em;
+}
+
+.navbar{
+    border-radius: 0px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logged{
+    padding: 15px 15px;
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+  padding: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+/* property filter */
+
+#filter_options{
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 6px;
+}
+/* userinfo */
+
+.user_info{
+  h1 {
+      font-size: 2em;
+
+    }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* property_info */
+
+.property_info {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prop_header {
+  font-weight: bold;
+}
+
+
+/* home */
+
+.home_central_image {
+  margin: 0 25% 20px 25%;
+}
+
+.buscarp {
+    margin: 15px;
+}
+
+/* */
+.navbar-custom {
+  background: #b3b3b3;
+  opacity: 0.9;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+.navbar-custom a:focus {
+  outline: none;
+}
+.navbar-custom .navbar-brand {
+  color: white;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: white;
+}
+.navbar-custom .navbar-nav {
+  letter-spacing: 1px;
+}
+.navbar-custom .navbar-nav li a {
+  color: white;
+}
+.navbar-custom .navbar-nav li a:hover {
+  color: #292929;
+  outline: none;
+}
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active {
+  color: white;
+}
+.navbar-custom .navbar-nav li.active a {
+  color: white;
+  background: #292929;
+}
+.navbar-custom .navbar-nav li.active a:hover,
+.navbar-custom .navbar-nav li.active a:focus,
+.navbar-custom .navbar-nav li.active a:active {
+  color: white;
+  background: #848484;
+}
+.navbar-custom .navbar-toggle {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-color: white;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #848484;
+  color: white;
+  border-color: #848484;
+}
+@media (min-width: 768px) {
+  .navbar-custom {
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+        >li{
+          display:block;
+        }
+    }
+}
+.navbar-nav {
+  width: 100%;
+  text-align: center;
+  > li {
+  float: none;
+  display: inline-block;
+  }
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 200px;
+    margin-bottom: 100px;
+    color: #f8f8f8;
+    background: url("bg_neg.jpg") no-repeat center center;
+    background-size: cover;
+}
+header .intro-text .name {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+  background-color: black;
+  opacity: 0.5;
+  text-align: center;
+}
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+  background-color: black;
+  opacity: 0.3;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 4.75em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+
+.jumbotron-b {
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .jumbotron-b {
+    margin-top: 200px;
+    margin-bottom: 100px;
+  }
+}
