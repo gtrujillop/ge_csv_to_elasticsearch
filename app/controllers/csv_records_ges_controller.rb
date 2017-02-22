@@ -7,9 +7,9 @@ class CsvRecordsGesController < ApplicationController
     CsvRecordsGe.transaction do
       @uploader = EventsUploader.new(csv_records_ges_params['events_csv'].path)
       @uploader.import_events
-      unless @uploader.successful?
-        raise ActiveRecord::Rollback, "No se pudo cargar el archivo, verifique los datos."
-      end
+      # unless @uploader.successful?
+      #   raise ActiveRecord::Rollback, "No se pudo cargar el archivo, verifique los datos."
+      # end
     end
     # TODO redirect to locations index
     flash[:error] = "Elementos inválidos en el archivo, verifique."
