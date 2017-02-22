@@ -8,7 +8,7 @@ class EventsUploader
   end
 
   def import_events
-    CSV.foreach(@csv_file_path, headers: true, :col_sep => ";", :skip_blanks => true) do | row |
+    CSV.foreach(@csv_file_path, headers: true, :col_sep => ";") do | row |
       record = CsvRecordsGe.new(format_row(row))
       errors << record.errors.full_messages.join(',') unless record.save
     end
