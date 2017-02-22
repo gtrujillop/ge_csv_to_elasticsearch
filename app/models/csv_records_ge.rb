@@ -3,6 +3,7 @@ class CsvRecordsGe < ActiveRecord::Base
   before_save :calculate_coordinates
 
   def calculate_coordinates
+    return unless event_address.present?
     country = ISO3166::Country.find_country_by_name(country_name_from_address)
     if country.present?
       self.event_latitude = country.latitude_dec
