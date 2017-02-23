@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221020628) do
+ActiveRecord::Schema.define(version: 20170223220740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "csv_processors", force: :cascade do |t|
+    t.integer  "status",        default: 0
+    t.text     "error_trace"
+    t.integer  "processed",     default: 0
+    t.integer  "non_processed", default: 0
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
 
   create_table "csv_records_ges", force: :cascade do |t|
     t.string   "mipr_number"

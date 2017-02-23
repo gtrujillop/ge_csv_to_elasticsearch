@@ -1,21 +1,40 @@
 require 'csv'
 class EventsUploader
-  attr_accessor :errors
+  attr_accessor :errors, :csv_processor
 
-  def initialize(csv_file_path)
+  def initialize(csv_file_path, csv_processor)
     @csv_file_path = csv_file_path
-    self.errors = []
+    @csv_processor = csv_processor
+    @processed = 0
+    @non_processed = 0
+    @errors = []
   end
 
   def import_events
     CSV.foreach(@csv_file_path, headers: true, :col_sep => ";") do | row |
       record = CsvRecordsGe.new(format_row(row))
-      errors << record.errors.full_messages.join(',') unless record.save
+      if record.save
+        @processed += 1
+      else
+        @errors << record.errors.full_messages.join(',')
+        @non_processed += 1
+      end
     end
+    update_processor_status
   end
 
-  def successful?
-    errors.empty?
+  def update_processor_status
+    @csv_processor.processed = @processed
+    @csv_processor.non_processed = @non_processed
+    @csv_processor.error_trace = @error_trace
+    if successful?
+      @csv_processor.status = :processed
+    elsif any_processed
+      @csv_processor.status = :partially_processed
+    else
+      @csv_processor.status = :failed
+    end
+    @csv_processor.save!
   end
 
   private
@@ -26,5 +45,13 @@ class EventsUploader
     values.except!('mipr_u_delivery_adress')
     values['event_address'] = event_address
     values
+  end
+
+  def successful?
+    @errors.empty?
+  end
+
+  def any_processed?
+    @processed > 0
   end
 end

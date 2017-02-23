@@ -19,6 +19,9 @@ gem 'countries'
 gem 'pg', '0.17.1'
 gem 'searchkick'
 
+gem 'resque'
+gem 'resque-scheduler'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
