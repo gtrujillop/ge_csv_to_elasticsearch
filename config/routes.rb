@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'csv_records_ges#new'
-  resources :csv_records_ges, only: [:new, :create]
+  root 'csv_processors#new'
+  resources :csv_processors, only: [:new, :create]
 end

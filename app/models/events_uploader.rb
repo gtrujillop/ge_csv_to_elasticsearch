@@ -2,8 +2,7 @@ require 'csv'
 class EventsUploader
   attr_accessor :errors, :csv_processor
 
-  def initialize(csv_file_path, csv_processor)
-    @csv_file_path = csv_file_path
+  def initialize(csv_processor)
     @csv_processor = csv_processor
     @processed = 0
     @non_processed = 0
@@ -11,7 +10,7 @@ class EventsUploader
   end
 
   def import_events
-    CSV.foreach(@csv_file_path, headers: true, :col_sep => ";") do | row |
+    CSV.foreach(@csv_processor.read_file, headers: true, :col_sep => ";") do | row |
       record = CsvRecordsGe.new(format_row(row))
       if record.save
         @processed += 1
