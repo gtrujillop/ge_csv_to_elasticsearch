@@ -15,7 +15,7 @@ class CsvRecordsGe < ActiveRecord::Base
     # Based on this Address format
     # AV. SANTO TORIBIO NO 115 INT. 701,27,SAN ISIDRO,PERU
     # Extracts the last piece (PERU)
-    country_name = event_address.split(',').last.capitalize
+    country_name = event_address.try(:split, ',').try(:last).try(:capitalize)
     country_name
   end
 
