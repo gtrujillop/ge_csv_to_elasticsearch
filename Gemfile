@@ -14,6 +14,8 @@ gem 'uglifier'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # gem 'geocoder'
+gem 'puma'
+
 gem 'countries'
 
 gem 'pg', '0.17.1'

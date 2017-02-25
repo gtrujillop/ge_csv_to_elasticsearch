@@ -108,6 +108,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     pg (0.17.1)
+    puma (3.7.1)
     rack (1.6.5)
     rack-protection (1.5.3)
       rack
@@ -224,6 +225,7 @@ DEPENDENCIES
   faker
   paperclip
   pg (= 0.17.1)
+  puma
   rails (= 4.2.5.2)
   rails_12factor (= 0.0.2)
   resque
