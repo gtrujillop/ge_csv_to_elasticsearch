@@ -11,7 +11,8 @@ class CsvProcessor < ActiveRecord::Base
   end
 
   def read_file
-    s3_file = file.s3_object(file.default_style).get
-    s3_file.body.read
+    # s3_file = file.s3_object(file.default_style).get
+    # s3_file.body.read
+    open(file.s3_object.public_url)
   end
 end

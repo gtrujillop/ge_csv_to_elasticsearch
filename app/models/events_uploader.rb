@@ -10,7 +10,8 @@ class EventsUploader
   end
 
   def import_events
-    CSV.foreach(@csv_processor.read_file, headers: true, :col_sep => ";") do | row |
+    file = @csv_processor.read_file
+    CSV.foreach(file, headers: true, :col_sep => ";") do | row |
       record = CsvRecordsGe.new(format_row(row))
       if record.save
         @processed += 1

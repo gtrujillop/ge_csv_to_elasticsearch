@@ -35,6 +35,7 @@ group :development, :test do
   gem 'spring'
   gem 'shoulda'
   gem 'faker'
+  gem 'pry'
 end
 
 group :production do
