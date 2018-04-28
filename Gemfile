@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.9'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'uglifier'
@@ -19,18 +19,18 @@ gem 'puma'
 gem 'countries'
 
 gem 'pg', '0.17.1'
-gem 'searchkick'
+gem 'searchkick', '~> 3'
 
 gem 'resque'
 gem 'resque-scheduler'
 
-gem 'paperclip'
+gem 'paperclip', '~> 4.3', '>= 4.3.7'
 gem 'aws-sdk', '~> 2.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec', '~> 3.7'
   gem 'factory_girl_rails', require: false
   gem 'spring'
   gem 'shoulda'
