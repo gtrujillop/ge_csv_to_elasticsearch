@@ -5,10 +5,12 @@ class CreateCsvRecordsGes < ActiveRecord::Migration
       t.string :mipro_u_number
       t.string :mipr_u_submitter
       t.string :mipr_u_status
+      t.string :mipr_u_submitter_email
       t.string :mid_value
       t.integer :mid_duration
       t.datetime :mid_start
       t.datetime :mid_end
+      t.string :mid_calculation_complete
       t.string :mipr_assignment_group
       t.string :mipr_assigned_to
       t.string :mipr_u_cod_impact
