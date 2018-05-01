@@ -25,7 +25,10 @@ gem 'resque'
 gem 'resque-scheduler'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.7'
-gem 'aws-sdk', '~> 2.3.0'
+# gem 'aws-sdk', '~> 2.3.0'
+gem 'aws-sdk', '< 2.0'
+gem "lograge"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

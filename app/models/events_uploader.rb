@@ -21,6 +21,10 @@ class EventsUploader
       end
     end
     update_processor_status
+  rescue StandardError => e
+    Rails.logger.error e.inspect
+    @csv_processor.status = :failed
+    @csv_processor.save!
   end
 
   def update_processor_status
