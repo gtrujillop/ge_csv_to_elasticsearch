@@ -13,7 +13,7 @@ class EventsUploader
     file = @csv_processor.read_file
     CSV.foreach(file, headers: true, :col_sep => ";") do | row |
       record = CsvRecordsGe.new(format_row(row))
-      if record.save
+      if record.save!
         @processed += 1
       else
         @errors << record.errors.full_messages.join(',')
@@ -45,6 +45,7 @@ class EventsUploader
 
   def format_row(row)
     values = row.to_hash
+    values.delete_if { |k,v| k.nil? || v.nil? }
     event_address = values['mipr_u_delivery_adress']
     values.except!('mipr_u_delivery_adress')
     values['event_address'] = event_address
